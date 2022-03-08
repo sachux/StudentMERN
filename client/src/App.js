@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { Container, AppBar, Typography, Grow, Grid} from '@material-ui/core'
+import { Container, AppBar, Typography, Grow, Grid, Divider} from '@material-ui/core'
 import Student from './components/showStudent/showStudent.js'
 import CreateStudent from './components/createStudent/createStudent.js'
 import useStyle from "./styles"
@@ -16,13 +16,14 @@ function App() {
 
         <Grow in>
           <Container>
-            <Grid container justify='space-between' alignItems='strect'>
+            <Grid container justify='space-between' alignItems='stretch'>
 
               <Grid items xs={12} sm={7}>
                   <Student />
               </Grid>
 
-              <Grid items xs={12} sm={7}>
+              <Grid items xs={12} sm={4}>
+
                 <div  className={classes.appBar} postition="static" color='inherit'>
                   <CreateStudent />
                 </div>

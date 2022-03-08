@@ -6,6 +6,14 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import { makeStyles } from '@material-ui/core/styles';
+
+
+const useStyles = makeStyles({
+    table: {
+        minWidth : 650,
+    }
+});
 
 function createData(name, calories, fat, carbs, protein) {
   return { name, calories, fat, carbs, protein };
@@ -20,7 +28,11 @@ const rows = [
 ];
 
 export default function BasicTable() {
+
+const useStyle = useStyles();
   return (
+      <>
+      <h2>All Students</h2>
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
@@ -50,5 +62,6 @@ export default function BasicTable() {
         </TableBody>
       </Table>
     </TableContainer>
+    </>
   );
 }
