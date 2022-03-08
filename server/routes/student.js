@@ -5,6 +5,6 @@ import student from "../models/student.js";
 const router = express.Router();
 
 router.get('/', getStundent);
-router.get('/', createStudent);
+router.post('/', createStudent);
 
 export default router;
