@@ -1,7 +1,8 @@
+import StudentModel from "../models/student.js";
+
 export const getStundent = async (req, res) => {
-    res.send("controller working")
     try {
-        const allStudent = await student.find();
+        const allStudent = await StudentModel.find();
         res.status(200).json(allStudent);
     } catch (error) {
         res.status(500).json({error : error.message})
@@ -11,7 +12,7 @@ export const getStundent = async (req, res) => {
 export const createStudent = async (req, res) => {
 
     const student = req.body;
-    const newStudent = new student(student);
+    const newStudent = new StudentModel(student);
 
     try {
         await newStudent.save();
@@ -19,7 +20,4 @@ export const createStudent = async (req, res) => {
     } catch (error) {
         res.status(500).json({error : error.message})
     }
-
-    res.send(" create controller working")
-
 }
