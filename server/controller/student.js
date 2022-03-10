@@ -21,3 +21,14 @@ export const createStudent = async (req, res) => {
         res.status(500).json({error : error.message})
     }
 }
+
+export const deleteStudent = async (req, res) => {
+
+    const student = req.params.id;
+    try {
+        await StudentModel.findByIdAndRemove(student).exec();
+        res.send("Deleted");
+    } catch (error) {
+        res.status(500).json({error : error.message})
+    }
+}
